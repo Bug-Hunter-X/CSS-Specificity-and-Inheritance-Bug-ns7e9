@@ -1,0 +1,43 @@
+To fix this, increase the specificity of the `.container p.special` selector to ensure it overrides the other selectors. This can be done by adding another class to the `div` element or using more specific selectors. 
+
+Here's the corrected CSS:
+
+```css
+div {
+  font-size: 16px;
+}
+
+.container div {
+  font-size: 18px;
+}
+
+.container p {
+  font-size: 14px;
+}
+
+.container .special {
+  font-size: 20px; /* Increased specificity by targeting the class directly */
+}
+```
+
+Alternatively, you could add another class to the `<p>` element that is more specific:
+
+```css
+div {
+  font-size: 16px;
+}
+
+.container div {
+  font-size: 18px;
+}
+
+.container p {
+  font-size: 14px;
+}
+
+.container p.special-text {
+  font-size: 20px; /* Increased specificity by adding another class */
+}
+```
+
+By increasing the specificity of the selector, we ensure that the intended `font-size` of `20px` is applied to the `.special` class within the `.container`.
